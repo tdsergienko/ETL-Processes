@@ -5,3 +5,25 @@ docker compose build
 docker compose up airflow-init
 docker compose up -d
 ```
+
+# Заполнение MongoDB
+
+```bash
+docker compose exec airflow-worker python /opt/airflow/scripts/generate_data_for_mongodb.py
+```
+
+# Подключение к MongoDB
+
+```bash
+docker compose exec mongo mongosh -u airflow -p airflow --authenticationDatabase admin
+```
+
+После подключения
+
+```bash
+use airflow
+show collections
+db.UserSessions.countDocuments()
+db.EventLogs.countDocuments()
+db.SupportTickets.countDocuments()
+```

@@ -2,4 +2,4 @@ FROM apache/airflow:2.8.4
 
 USER airflow
 
-RUN pip install pymongo
+RUN pip install pymongo faker
