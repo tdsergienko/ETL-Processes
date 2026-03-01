@@ -27,3 +27,15 @@ db.UserSessions.countDocuments()
 db.EventLogs.countDocuments()
 db.SupportTickets.countDocuments()
 ```
+
+# Подключение к PostgreSQL
+
+```
+docker exec -it final-postgres-1 psql -U airflow -d airflow
+```
+
+После подключения
+
+```
+\dt marketplace.*
+```
